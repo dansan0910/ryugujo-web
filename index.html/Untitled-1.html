@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>龍宮城 RYUGUJO ＆ 龍宮場 オフィシャルサイト</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Shippori Mincho, Noto Serif JP, Playfair Display, Cinzel, Space Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Noto+Serif+JP:wght@500;700;900&family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,600&family=Shippori+Mincho:wght@500;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'bordeaux-vivid': '#990024',
+            'bordeaux-deep': '#700018',
+            'bordeaux-crimson': '#B80D35',
+            'gallery-white': '#FFFFFF',
+            'paper-bg': '#FAF8F5',
+            'warm-ivory': '#F2EFEB',
+            'ink-deep': '#121113',
+            'line-gray': '#E5E1D8',
+            'caption-gray': '#7D7871',
+          },
+          fontFamily: {
+            mincho: ['"Shippori Mincho"', '"Noto Serif JP"', 'serif'],
+            display: ['"Playfair Display"', '"Cinzel"', 'serif'],
+            mono: ['"Space Mono"', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html, body {
+      background-color: #FAF8F5;
+      color: #121113;
+      font-family: "Shippori Mincho", "Noto Serif JP", serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    ::selection {
+      background-color: #990024;
+      color: #FFFFFF;
+    }
+
+    .hairline-b { border-bottom: 1px solid #E5E1D8; }
+    .hairline-t { border-top: 1px solid #E5E1D8; }
+    .hairline-l { border-left: 1px solid #E5E1D8; }
+    .hairline-r { border-right: 1px solid #E5E1D8; }
+
+    ::-webkit-scrollbar {
+      width: 4px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FAF8F5;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #990024;
+    }
+
+    /* 3D Fanclub Card Flip */
+    .card-scene {
+      perspective: 1200px;
+    }
+    .card-flipper {
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      transform-style: preserve-3d;
+    }
+    .card-flipper.is-flipped {
+      transform: rotateY(180deg);
+    }
+    .card-face {
+      backface-visibility: hidden;
+    }
+    .card-back {
+      transform: rotateY(180deg);
+    }
+  </style>
+</head>
+<body class="bg-paper-bg text-ink-deep selection:bg-bordeaux-vivid selection:text-white">
+
+  <aside class="w-full bg-gallery-white hairline-b py-2.5 px-6 sm:px-16 text-[10px] font-mono tracking-[0.28em] uppercase flex justify-between items-center z-50 relative">
+    <div class="flex items-center space-x-3">
+      <span class="w-2 h-2 rounded-full bg-bordeaux-vivid inline-block animate-pulse"></span>
+      <span class="text-ink-deep font-bold tracking-[0.3em]">RYUGUJO ＆ 龍宮場</span>
+      <span class="hidden md:inline text-caption-gray">| OFFICIAL EDITORIAL DOSSIER</span>
+    </div>
+    <div class="flex items-center space-x-5 text-[10px] text-caption-gray">
+      <span>PRODUCED BY AVU-CHAN (女王蜂)</span>
+      <span>/</span>
+      <span class="text-bordeaux-vivid font-bold">SONY MUSIC LABELS</span>
+    </div>
+  </aside>
+
+  <!-- Navigation Header -->
+  <header class="w-full hairline-b bg-gallery-white/95 backdrop-blur-md sticky top-0 z-40 px-6 sm:px-16 py-6 transition-all">
+    <div class="max-w-[1760px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+      
+      <nav class="flex items-center space-x-8 text-[11px] font-mono uppercase tracking-[0.3em] order-2 md:order-1 text-caption-gray">
+        <a href="#cover" class="hover:text-bordeaux-vivid transition-colors">01. COVER</a>
+        <a href="#statement" class="hover:text-bordeaux-vivid transition-colors">02. STATEMENT</a>
+        <a href="#members" class="hover:text-bordeaux-vivid transition-colors">03. MEMBERS</a>
+        <a href="#discography" class="hover:text-bordeaux-vivid transition-colors">04. WORKS</a>
+        <a href="#fanclub" class="hover:text-bordeaux-vivid transition-colors">05. 龍宮場 FC</a>
+      </nav>
+
+      <div class="text-center order-1 md:order-2">
+        <a href="#" class="inline-block group">
+          <h1 class="font-mincho font-black text-3xl sm:text-4xl tracking-[0.35em] text-ink-deep group-hover:text-bordeaux-vivid transition-colors">
+            龍 宮 城
+          </h1>
+          <p class="font-display text-[10px] tracking-[0.6em] text-bordeaux-vivid uppercase mt-1 font-bold">
+            R Y U G U J O
+          </p>
+        </a>
+      </div>
+
+      <div class="order-3 flex items-center space-x-6">
+        <a href="#fanclub" class="font-mono text-[11px] tracking-[0.25em] uppercase text-bordeaux-vivid hover:text-white px-6 py-2.5 border border-bordeaux-vivid hover:bg-bordeaux-vivid transition-all duration-300">
+          FC 龍宮場 入会 ↗
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <section id="cover" class="w-full bg-paper-bg py-12 sm:py-20 px-6 sm:px-16 hairline-b">
+    <div class="max-w-[1760px] mx-auto">
+      
+      <div class="flex flex-col md:flex-row justify-between items-end mb-8 gap-6">
+        <div>
+          <div class="font-mono text-[10px] tracking-[0.45em] text-bordeaux-vivid uppercase mb-3 flex items-center gap-3 font-bold">
+            <span class="w-8 h-[1px] bg-bordeaux-vivid inline-block"></span>
+            <span>ALTERNATIVE KAYO-DANCE GROUP</span>
+          </div>
+          <h2 class="font-mincho font-black text-4xl sm:text-6xl text-ink-deep tracking-tight leading-tight">
+            深海に棲まう、美しき異端。<span class="font-display italic font-normal text-bordeaux-vivid text-3xl sm:text-5xl ml-3">The New Aesthetic</span>
+          </h2>
+        </div>
+        <div class="text-right font-mono text-[11px] text-caption-gray tracking-[0.25em] hidden sm:block">
+          <div>DIRECTED BY AVU-CHAN (QUEEN BEE)</div>
+          <div class="text-ink-deep font-bold mt-1">7 ARTISTS // TOKYO</div>
+        </div>
+      </div>
+
+      <!-- Horizontal Panoramic Group Photo (16:7 / 21:9) -->
+      <div class="w-full aspect-[16/7] sm:aspect-[21/9] bg-warm-ivory border border-line-gray relative overflow-hidden group shadow-[0_20px_50px_rgba(153,0,36,0.06)]">
+        <img 
+          src="images/hero.jpg" 
+          alt="龍宮城 RYUGUJO Landscape Official Visual" 
+          class="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-[1.02]"
+        />
+        <div class="absolute top-5 left-5 font-mono text-[9px] tracking-[0.3em] bg-gallery-white/95 px-4 py-1.5 text-ink-deep border border-line-gray uppercase font-semibold">
+          PLATE 01 // ENSEMBLE
+        </div>
+        <div class="absolute bottom-5 right-5 font-mono text-[9px] tracking-[0.3em] bg-bordeaux-vivid px-4 py-1.5 text-gallery-white uppercase font-bold">
+          0年0組 — NTV / SONY
+        </div>
+      </div>
+
+      <!-- Live Tour Reckoning Ticker -->
+      <div class="mt-10 pt-8 hairline-t grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+        <div class="md:col-span-5 font-mincho">
+          <span class="font-mono text-[10px] tracking-[0.3em] text-bordeaux-vivid uppercase block font-bold mb-1">LIVE PERFORMANCE COUNTDOWN</span>
+          <h3 class="font-black text-xl sm:text-2xl text-ink-deep">次回 単独公演 開催まで</h3>
+        </div>
+        <div class="md:col-span-7 grid grid-cols-4 gap-3 sm:gap-4 font-mono text-center">
+          <div class="p-4 bg-gallery-white border border-line-gray">
+            <span id="ticker-days" class="font-display font-bold text-3xl sm:text-4xl text-ink-deep block">--</span>
+            <span class="text-[9px] tracking-widest text-caption-gray uppercase">DAYS</span>
+          </div>
+          <div class="p-4 bg-gallery-white border border-line-gray">
+            <span id="ticker-hours" class="font-display font-bold text-3xl sm:text-4xl text-ink-deep block">--</span>
+            <span class="text-[9px] tracking-widest text-caption-gray uppercase">HOURS</span>
+          </div>
+          <div class="p-4 bg-gallery-white border border-line-gray">
+            <span id="ticker-mins" class="font-display font-bold text-3xl sm:text-4xl text-ink-deep block">--</span>
+            <span class="text-[9px] tracking-widest text-caption-gray uppercase">MINUTES</span>
+          </div>
+          <div class="p-4 bg-bordeaux-vivid text-gallery-white border border-bordeaux-deep">
+            <span id="ticker-secs" class="font-display font-bold text-3xl sm:text-4xl text-gallery-white block">--</span>
+            <span class="text-[9px] tracking-widest text-warm-ivory uppercase font-bold">SECONDS</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="statement" class="w-full bg-bordeaux-vivid text-gallery-white py-24 sm:py-36 px-6 sm:px-16 relative overflow-hidden">
+    <div class="max-w-[1760px] mx-auto grid grid-cols-12 gap-10 lg:gap-20 items-center">
+      
+      <div class="col-span-12 lg:col-span-5 space-y-6">
+        <div class="font-mono text-[10px] tracking-[0.5em] text-white/80 uppercase flex items-center gap-3">
+          <span class="w-8 h-[1px] bg-white/80 inline-block"></span>
+          <span>02 // MANIFESTO</span>
+        </div>
+
+        <h2 class="font-mincho font-black text-5xl sm:text-7xl xl:text-8xl tracking-tight leading-[1.08] text-gallery-white">
+          深 海 の 衝 動。<br>
+          <span class="font-display italic font-normal text-white/90">Theatrics</span> 覚 醒。
+        </h2>
+
+        <p class="font-mono text-xs tracking-[0.3em] text-white/70 uppercase">
+          PRODUCED BY AVU-CHAN (QUEEN BEE) // 0年0組
+        </p>
+      </div>
+
+      <div class="col-span-12 lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-14 font-mincho text-white/95 text-base sm:text-lg leading-[2.4]">
+        <div class="space-y-6">
+          <p class="text-white font-bold text-xl sm:text-2xl leading-relaxed">
+            規格化された偶像劇を拒絶し、美と劇毒を舞台上に刻みつける7人の異端児。
+          </p>
+          <p class="text-white/85">
+            日本テレビのスクール型オーディション番組『0年0組 -アヴちゃんの教室-』より誕生。女王蜂のヴォーカル・アヴちゃんがプロデュースを手掛け、歌謡曲が内包する哀愁と、オルタナティブロックの攻撃性、コンテンポラリーダンスの緊張感を極限まで昇華させた。
+          </p>
+        </div>
+
+        <div class="space-y-6">
+          <p class="text-white/85">
+            静寂の純白と、熱情を孕んだ深紅（ボルドー）の色彩の中で、観る者の心臓を直接揺さぶる。過酷な試練を超えて結実した圧倒的求心力が、現代の音楽シーンに新たな神話を描き出していく。
+          </p>
+          
+          <div class="hairline-t border-white/20 pt-6 font-mono text-[10px] tracking-[0.25em] text-white/80 space-y-2">
+            <div class="flex justify-between">
+              <span>GENRE</span>
+              <span class="text-white font-bold">ALTERNATIVE KAYO-DANCE</span>
+            </div>
+            <div class="flex justify-between">
+              <span>PRODUCER</span>
+              <span class="text-white font-bold">AVU-CHAN (女王蜂)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="members" class="py-24 sm:py-36 px-6 sm:px-16 hairline-b bg-paper-bg">
+    <div class="max-w-[1760px] mx-auto">
+      
+      <div class="flex flex-col md:flex-row justify-between items-baseline mb-16 hairline-b pb-8">
+        <div>
+          <span class="font-mono text-[10px] uppercase text-bordeaux-vivid tracking-[0.4em] font-bold block mb-2">03 // ARTIST DOSSIER</span>
+          <h3 class="font-mincho font-black text-4xl sm:text-6xl text-ink-deep tracking-tight">七人の肖像と美学</h3>
+        </div>
+        <p class="font-mono text-[11px] text-caption-gray tracking-[0.25em] mt-3 md:mt-0 uppercase">
+          CLICK MEMBER TO INSPECT INDIVIDUAL PORTRAIT & ARCHIVE
+        </p>
+      </div>
+
+      <!-- 7 Member Selector Cards -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-4 lg:gap-5" id="members-grid-box">
+        <!-- Injected via JavaScript -->
+      </div>
+
+      <!-- Expanded Member Profile Window -->
+      <div id="member-profile-card" class="mt-16 bg-gallery-white border border-line-gray p-8 sm:p-14 transition-all duration-500 shadow-[0_20px_50px_rgba(153,0,36,0.04)]">
+        <div class="grid grid-cols-12 gap-8 lg:gap-16 items-center">
+          
+          <!-- Portrait Frame -->
+          <div class="col-span-12 md:col-span-5 lg:col-span-4">
+            <div class="aspect-[3/4] bg-warm-ivory border border-line-gray relative overflow-hidden group shadow-sm">
+              <img 
+                id="profile-portrait"
+                src="images/itaru.jpg" 
+                alt="Member Portrait"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+            </div>
+          </div>
+
+          <!-- Editorial Text Details -->
+          <div class="col-span-12 md:col-span-7 lg:col-span-8 space-y-8">
+            <div>
+              <div class="flex items-center space-x-4 mb-3 font-mono text-[10px] tracking-[0.25em]">
+                <span id="profile-index" class="bg-bordeaux-vivid text-gallery-white px-3.5 py-1 font-bold">N° 01</span>
+                <span id="profile-kanji" class="font-mincho font-black text-2xl sm:text-3xl text-ink-deep">西田 至</span>
+                <span id="profile-role" class="text-bordeaux-vivid border border-bordeaux-vivid/40 bg-warm-ivory px-3 py-1 uppercase font-bold">CENTER VOCAL</span>
+              </div>
+
+              <h4 id="profile-name" class="font-display font-black text-5xl sm:text-7xl text-ink-deep uppercase tracking-tight">
+                ITARU
+              </h4>
+
+              <p id="profile-sub" class="font-mono text-xs text-caption-gray tracking-[0.25em] uppercase mt-2">
+                THEATRICAL PROTAGONIST // VOID LEAD
+              </p>
+            </div>
+
+            <div class="hairline-t pt-6 space-y-4">
+              <span class="font-mono text-[10px] tracking-[0.35em] uppercase text-bordeaux-vivid font-bold block">EDITORIAL DOSSIER</span>
+              <p id="profile-desc" class="font-mincho text-base sm:text-lg text-ink-deep/90 leading-[2.4]">
+                圧倒的な求心力と哀切を宿した歌声で観客を射抜く龍宮城の表現的中心。舞台上で見せる鬼気迫る眼差しと純粋な身体表現は、アヴちゃんが掲げる過酷な耽美世界を見事に体現している。
+              </p>
+            </div>
+
+            <div class="hairline-l border-bordeaux-vivid pl-6 py-3 bg-warm-ivory/60">
+              <span class="font-mono text-[10px] tracking-widest text-caption-gray uppercase block mb-1">SIGNATURE MOTIF</span>
+              <p id="profile-quote" class="font-mincho text-lg sm:text-xl font-bold text-bordeaux-vivid italic">
+                「深海に射し込む、残酷なまでに純粋な一筋の閃光。」
+              </p>
+            </div>
+
+            <div class="pt-2 flex flex-wrap gap-4 font-mono text-xs tracking-widest">
+              <button onclick="playEditorialChant()" class="bg-bordeaux-vivid hover:bg-bordeaux-deep text-white px-8 py-4 uppercase transition-colors font-bold">
+                ✦ 共鳴音試聴 RESONANCE
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="discography" class="py-24 sm:py-36 px-6 sm:px-16 hairline-b bg-gallery-white">
+    <div class="max-w-[1760px] mx-auto">
+      
+      <div class="flex flex-col md:flex-row justify-between items-baseline mb-16 hairline-b pb-8">
+        <div>
+          <span class="font-mono text-[10px] uppercase text-bordeaux-vivid tracking-[0.4em] font-bold block mb-2">04 // DISCOGRAPHY ARCHIVE</span>
+          <h3 class="font-mincho font-black text-4xl sm:text-6xl text-ink-deep tracking-tight">作品と音像記録</h3>
+        </div>
+        <p class="font-mono text-[11px] text-caption-gray tracking-[0.25em] mt-3 md:mt-0 uppercase">
+          SOUNDTRACK COMPOSED & WRITTEN BY AVU-CHAN
+        </p>
+      </div>
+
+      <!-- Release List -->
+      <div class="divide-y divide-line-gray font-mono text-xs">
+        
+        <div class="py-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 group hover:bg-paper-bg px-4 transition-colors">
+          <div class="flex items-center space-x-6 sm:space-x-12">
+            <span class="font-mono text-caption-gray font-bold">01</span>
+            <div>
+              <span class="font-display font-bold text-2xl sm:text-3xl text-ink-deep group-hover:text-bordeaux-vivid transition-colors">RONDO</span>
+              <span class="font-mincho text-caption-gray text-sm ml-3">輪舞曲 — デビューシングル</span>
+            </div>
+          </div>
+          <div class="flex items-center space-x-8 text-caption-gray text-[11px] tracking-widest">
+            <span>2023.04 RELEASE</span>
+            <button onclick="playTrackSimulation('RONDO', 246.94)" class="border border-line-gray px-6 py-2.5 hover:border-bordeaux-vivid text-bordeaux-vivid hover:bg-bordeaux-vivid hover:text-white transition-all bg-gallery-white font-medium">
+              ▶ 試聴 RESONANCE
+            </button>
+          </div>
+        </div>
+
+        <div class="py-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 group hover:bg-paper-bg px-4 transition-colors">
+          <div class="flex items-center space-x-6 sm:space-x-12">
+            <span class="font-mono text-caption-gray font-bold">02</span>
+            <div>
+              <span class="font-display font-bold text-2xl sm:text-3xl text-ink-deep group-hover:text-bordeaux-vivid transition-colors">2 MUCH</span>
+              <span class="font-mincho text-caption-gray text-sm ml-3">日本テレビ『秘密を持った少年たち』主題歌</span>
+            </div>
+          </div>
+          <div class="flex items-center space-x-8 text-caption-gray text-[11px] tracking-widest">
+            <span>2023.09 RELEASE</span>
+            <button onclick="playTrackSimulation('2 MUCH', 329.63)" class="border border-line-gray px-6 py-2.5 hover:border-bordeaux-vivid text-bordeaux-vivid hover:bg-bordeaux-vivid hover:text-white transition-all bg-gallery-white font-medium">
+              ▶ 試聴 RESONANCE
+            </button>
+          </div>
+        </div>
+
+        <div class="py-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 group hover:bg-paper-bg px-4 transition-colors">
+          <div class="flex items-center space-x-6 sm:space-x-12">
+            <span class="font-mono text-caption-gray font-bold">03</span>
+            <div>
+              <span class="font-display font-bold text-2xl sm:text-3xl text-ink-deep group-hover:text-bordeaux-vivid transition-colors">SHORINJI</span>
+              <span class="font-mincho text-caption-gray text-sm ml-3">少林寺 — プレデビュー配信曲</span>
+            </div>
+          </div>
+          <div class="flex items-center space-x-8 text-caption-gray text-[11px] tracking-widest">
+            <span>2023.12 RELEASE</span>
+            <button onclick="playTrackSimulation('SHORINJI', 392.00)" class="border border-line-gray px-6 py-2.5 hover:border-bordeaux-vivid text-bordeaux-vivid hover:bg-bordeaux-vivid hover:text-white transition-all bg-gallery-white font-medium">
+              ▶ 試聴 RESONANCE
+            </button>
+          </div>
+        </div>
+
+        <div class="py-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 group hover:bg-paper-bg px-4 transition-colors">
+          <div class="flex items-center space-x-6 sm:space-x-12">
+            <span class="font-mono text-caption-gray font-bold">04</span>
+            <div>
+              <span class="font-display font-bold text-2xl sm:text-3xl text-ink-deep group-hover:text-bordeaux-vivid transition-colors">DEEP WAVE</span>
+              <span class="font-mincho text-caption-gray text-sm ml-3">深海の波浪 — EP コレクション</span>
+            </div>
+          </div>
+          <div class="flex items-center space-x-8 text-caption-gray text-[11px] tracking-widest">
+            <span>2024 - 2026 ARCHIVE</span>
+            <button onclick="playTrackSimulation('DEEP WAVE', 220.00)" class="border border-line-gray px-6 py-2.5 hover:border-bordeaux-vivid text-bordeaux-vivid hover:bg-bordeaux-vivid hover:text-white transition-all bg-gallery-white font-medium">
+              ▶ 試聴 RESONANCE
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Synthesizer Status Bar -->
+      <div id="audio-status" class="mt-8 p-4 bg-warm-ivory border border-line-gray font-mono text-xs flex justify-between items-center hidden">
+        <div class="flex items-center space-x-3">
+          <span class="w-2 h-2 rounded-full bg-bordeaux-vivid animate-ping"></span>
+          <span class="text-caption-gray">PLAYING SOUND RESONANCE:</span>
+          <span id="playing-track-name" class="font-bold text-bordeaux-vivid uppercase">RONDO</span>
+        </div>
+        <button onclick="stopAudio()" class="text-bordeaux-vivid font-bold hover:underline">[STOP 停止]</button>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="fanclub" class="py-24 sm:py-36 px-6 sm:px-16 hairline-b bg-warm-ivory relative">
+    <div class="max-w-[1760px] mx-auto grid grid-cols-12 gap-12 lg:gap-20 items-center">
+      
+      <!-- Text details -->
+      <div class="col-span-12 lg:col-span-6 space-y-8">
+        <div>
+          <span class="font-mono text-[10px] uppercase text-bordeaux-vivid tracking-[0.4em] font-bold block mb-2">05 // OFFICIAL SANCTUARY</span>
+          <h3 class="font-mincho font-black text-4xl sm:text-6xl text-ink-deep tracking-tight leading-tight">
+            オフィシャルファンクラブ<br>
+            「 龍 宮 場 」
+          </h3>
+        </div>
+
+        <p class="font-mincho text-ink-deep/85 text-base sm:text-lg leading-[2.4] max-w-xl">
+          龍宮城の深遠なる世界をより純粋に共有するための会員制領域「龍宮場」。最速チケット先行抽選、未公開のリハーサルドキュメント、メンバー本人による限定コラム、そして一人ひとりに付与されるデジタル会員証を発行いたします。
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 font-mono text-[11px] pt-4">
+          <div class="p-6 bg-gallery-white border border-line-gray shadow-sm">
+            <span class="text-bordeaux-vivid font-bold block mb-1">01 / TICKET PRIORITY</span>
+            <span class="text-caption-gray font-mincho">全国単独ツアー最速先行抽選予約受付</span>
+          </div>
+          <div class="p-6 bg-gallery-white border border-line-gray shadow-sm">
+            <span class="text-bordeaux-vivid font-bold block mb-1">02 / UNRELEASED FILM</span>
+            <span class="text-caption-gray font-mincho">舞台裏密着映像・限定フォトギャラリー</span>
+          </div>
+          <div class="p-6 bg-gallery-white border border-line-gray shadow-sm">
+            <span class="text-bordeaux-vivid font-bold block mb-1">03 / MEMBER ESSAYS</span>
+            <span class="text-caption-gray font-mincho">7名のメンバーによる執筆連載アーカイブ</span>
+          </div>
+          <div class="p-6 bg-gallery-white border border-line-gray shadow-sm">
+            <span class="text-bordeaux-vivid font-bold block mb-1">04 / DIGITAL PASS</span>
+            <span class="text-caption-gray font-mincho">シリアルナンバー入り立体3Dデジタル会員証</span>
+          </div>
+        </div>
+
+        <div class="pt-4 flex flex-wrap gap-4 font-mono text-xs tracking-widest">
+          <button onclick="flipCard()" class="bg-bordeaux-vivid text-gallery-white hover:bg-bordeaux-deep px-8 py-4 uppercase font-bold transition-colors">
+            会員証を裏返す ➜
+          </button>
+          <button onclick="generatePassSerial()" class="border border-line-gray hover:border-ink-deep px-6 py-4 uppercase text-ink-deep transition-colors bg-gallery-white font-medium">
+            認証番号再発行
+          </button>
+        </div>
+      </div>
+
+      <!-- 3D Membership Pass -->
+      <div class="col-span-12 lg:col-span-6 flex justify-center items-center">
+        <div class="w-full max-w-md card-scene cursor-pointer select-none" onclick="flipCard()">
+          
+          <div id="pass-card" class="card-flipper relative aspect-[1.58/1] border border-line-gray shadow-[0_25px_60px_rgba(153,0,36,0.08)]">
+            
+            <!-- Front -->
+            <div class="card-face absolute inset-0 bg-gallery-white p-8 flex flex-col justify-between border-t-4 border-bordeaux-vivid">
+              <div class="flex justify-between items-start">
+                <div>
+                  <span class="font-mono text-[9px] text-bordeaux-vivid tracking-[0.35em] uppercase block font-bold">
+                    SANCTUARY PASS
+                  </span>
+                  <span class="font-mincho font-black text-3xl tracking-[0.2em] text-ink-deep mt-1 block">
+                    龍 宮 場
+                  </span>
+                </div>
+                <div class="w-9 h-9 rounded-full border border-bordeaux-vivid/30 flex items-center justify-center bg-warm-ivory">
+                  <span class="w-3 h-3 rounded-full bg-bordeaux-vivid"></span>
+                </div>
+              </div>
+
+              <div>
+                <span class="font-mono text-[9px] tracking-[0.25em] text-caption-gray uppercase block mb-1">MEMBER NUMBER</span>
+                <span id="pass-serial" class="font-mono font-bold text-2xl sm:text-3xl text-bordeaux-vivid tracking-[0.25em]">
+                  RGJ-2026-0794
+                </span>
+              </div>
+
+              <div class="flex justify-between items-end hairline-t pt-4 font-mono text-[10px] text-caption-gray tracking-widest">
+                <div>
+                  <span class="text-[8px] uppercase block text-caption-gray">MEMBERSHIP TIER</span>
+                  <span class="text-ink-deep font-bold">BORDEAUX PLATINUM</span>
+                </div>
+                <div class="text-right">
+                  <span class="text-[8px] uppercase block text-caption-gray">PRODUCED BY</span>
+                  <span class="text-bordeaux-vivid font-bold">AVU-CHAN SPEC</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Back -->
+            <div class="card-face card-back absolute inset-0 bg-paper-bg p-8 flex flex-col justify-between border border-line-gray">
+              <div class="w-full h-8 bg-bordeaux-vivid/10 -mx-8 mb-4 border-y border-bordeaux-vivid/20"></div>
+              
+              <div class="space-y-3 font-mincho text-xs text-ink-deep/80 leading-relaxed">
+                <p>● 本証は龍宮城公式ファンクラブ「龍宮場」の正会員であることを証明するものです。</p>
+                <p>● 公演会場での優先入場ならびに会員限定コンテンツのご利用に際し有効となります。</p>
+                <p class="font-mono text-[10px] text-bordeaux-vivid font-bold">ALL RIGHTS RESERVED © SONY MUSIC LABELS INC.</p>
+              </div>
+
+              <div class="flex justify-between items-center font-mono text-[9px] text-caption-gray hairline-t pt-3 tracking-widest">
+                <span>RYUGUJO-OFFICIAL.COM</span>
+                <span class="text-ink-deep font-bold">EDITION 2026</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="py-24 sm:py-36 px-6 sm:px-16 hairline-b bg-paper-bg">
+    <div class="max-w-[1760px] mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-baseline mb-16 hairline-b pb-8">
+        <div>
+          <span class="font-mono text-[10px] uppercase text-bordeaux-vivid tracking-[0.4em] font-bold block mb-2">06 // PERFORMANCE CALENDAR</span>
+          <h3 class="font-mincho font-black text-4xl sm:text-6xl text-ink-deep tracking-tight">単独公演日程</h3>
+        </div>
+        <p class="font-mono text-[11px] text-caption-gray tracking-[0.25em] mt-3 md:mt-0 uppercase">
+          TICKET INFORMATION ＆ VENUE
+        </p>
+      </div>
+
+      <div class="divide-y divide-line-gray font-mono text-xs">
+        <div class="py-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+          <div class="space-y-1">
+            <span class="text-bordeaux-vivid font-bold tracking-widest block text-sm">2026.11.14 [SAT]</span>
+            <span class="font-mincho text-lg text-ink-deep font-bold">龍宮城 単独公演「深海への招待」東京公演</span>
+            <span class="text-caption-gray block">Zepp DiverCity (TOKYO) // OPEN 17:00 / START 18:00</span>
+          </div>
+          <button class="bg-bordeaux-vivid text-white px-7 py-3 uppercase hover:bg-bordeaux-deep transition-colors font-bold">
+            FC先行受付中 ↗
+          </button>
+        </div>
+
+        <div class="py-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+          <div class="space-y-1">
+            <span class="text-bordeaux-vivid font-bold tracking-widest block text-sm">2026.11.28 [SAT]</span>
+            <span class="font-mincho text-lg text-ink-deep font-bold">龍宮城 単独公演「深海への招待」大阪公演</span>
+            <span class="text-caption-gray block">Zepp Namba (OSAKA) // OPEN 17:00 / START 18:00</span>
+          </div>
+          <button class="bg-bordeaux-vivid text-white px-7 py-3 uppercase hover:bg-bordeaux-deep transition-colors font-bold">
+            FC先行受付中 ↗
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-20 px-6 sm:px-16 bg-gallery-white hairline-t text-caption-gray font-mono text-[11px]">
+    <div class="max-w-[1760px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+      
+      <div class="md:col-span-5 space-y-3">
+        <h5 class="font-mincho font-black text-2xl text-ink-deep tracking-[0.3em]">龍 宮 城</h5>
+        <p class="font-mincho text-caption-gray max-w-sm leading-relaxed">
+          日本テレビ『0年0組 -アヴちゃんの教室-』より誕生。<br>
+          アヴちゃん（女王蜂）プロデュースによるオルタナティブ歌謡舞踊集団。
+        </p>
+      </div>
+
+      <div class="md:col-span-4 space-y-2">
+        <span class="font-bold uppercase tracking-widest text-ink-deep block mb-2">OFFICIAL LINKS</span>
+        <p><a href="https://ryugujo-official.com" target="_blank" class="hover:text-bordeaux-vivid transition-colors">RYUGUJO-OFFICIAL.COM ↗</a></p>
+        <p><a href="#fanclub" class="hover:text-bordeaux-vivid transition-colors">FAN CLUB「龍宮場」入会案内 ↗</a></p>
+        <p class="text-caption-gray/70 pt-2">LABEL: SONY MUSIC LABELS INC.</p>
+      </div>
+
+      <div class="md:col-span-3 space-y-2 md:text-right">
+        <span class="font-bold uppercase tracking-widest text-ink-deep block mb-2">ARCHIVE SPEC</span>
+        <p>© 2026 RYUGUJO ＆ 龍宮場.</p>
+        <p class="text-bordeaux-vivid font-bold">CRIMSON BORDEAUX ＆ WHITE ARCHIVE</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    // 7 Members Full Editorial Japanese Dataset
+    const membersData = [
+      {
+        id: "01",
+        code: "IT",
+        name: "ITARU",
+        kanji: "西田 至",
+        role: "CENTER VOCAL",
+        sub: "THEATRICAL PROTAGONIST // VOID LEAD",
+        img: "images/itaru.jpg",
+        desc: "圧倒的な求心力と哀切を宿した歌声で観客を射抜く龍宮城の表現的中心。舞台上で見せる鬼気迫る眼差しと純粋な身体表現は、アヴちゃんが掲げる過酷な耽美世界を見事に体現している。",
+        quote: "「深海に射し込む、残酷なまでに純粋な一筋の閃光。」"
+      },
+      {
+        id: "02",
+        code: "KT",
+        name: "KENT",
+        kanji: "米尾 賢人",
+        role: "VOCAL & DANCE",
+        sub: "SHARP CONTEMPORARY EDGE",
+        img: "images/kent.jpg",
+        desc: "研ぎ澄まされた刃のように鋭利な身体のラインとリズム感で空間を支配するダンサー兼ボーカリスト。冷徹さと疾走感が同居したパフォーマンスで世界観を牽引する。",
+        quote: "「静謐を裂く一刃のナイフのようなシルエット。」"
+      },
+      {
+        id: "03",
+        code: "RY",
+        name: "Ray",
+        kanji: "竹内 黎",
+        role: "POETIC VOCAL",
+        sub: "INTELLIGENCE & FALSETTO HARMONY",
+        img: "images/ray.jpg",
+        desc: "豊かな知性と透明度の高いファルセットを響かせる詩的表現者。世界を見据えた視野と流麗な言語感覚で、龍宮城が放つ美意識に優雅な奥行きを与える。",
+        quote: "「水面を揺らしながら深く沈みゆく青い祈り。」"
+      },
+      {
+        id: "04",
+        code: "KG",
+        name: "KEIGO",
+        kanji: "伊藤 圭吾",
+        role: "AVANT-GARDE",
+        sub: "THESPIAN / GLAMOUR & MADNESS",
+        img: "images/keigo.jpg",
+        desc: "演劇的な狂気と抗いがたい妖艶さを放つ異彩。アヴちゃんの美学を最もヴィヴィッドに肉体化し、ステージ上の空気を一瞬にして異世界へと変容させる。",
+        quote: "「毒を秘めた薔薇、華麗なるカタルシス。」"
+      },
+      {
+        id: "05",
+        code: "S",
+        name: "S",
+        kanji: "佐藤 海音",
+        role: "OBSIDIAN VISUAL",
+        sub: "LEAD ACTOR & VOCAL CORE",
+        img: "images/s.jpg",
+        desc: "端麗な造形美の奥に剥き出しの野性を宿す存在。俳優としても注目を集める凛とした佇まいと低く響く声で、グループの主軸を冷徹に支える。",
+        quote: "「黒曜石のように磨かれた孤独と熱情。」"
+      },
+      {
+        id: "06",
+        code: "HK",
+        name: "Haruku",
+        kanji: "齋木 春空",
+        role: "DANCE / VOCAL",
+        sub: "YOUTH INSTINCT & SENSITIVE BLOOM",
+        img: "images/haruku.jpg",
+        desc: "少年の純真さと刹那的な色気を併せ持つ表現者。しなやかで力強い跳躍と、エモーショナルに揺れる声で舞台に息づく生命力を刻み込む。",
+        quote: "「海底に咲き乱れる極彩色の珊瑚。」"
+      },
+      {
+        id: "07",
+        code: "TM",
+        name: "Tomoki",
+        kanji: "冨田 侑暉",
+        role: "BASS & PILLAR",
+        sub: "MONUMENTAL STATURE & HARMONIC SOUL",
+        img: "images/tomoki.jpg",
+        desc: "恵まれた体躯が生み出すダイナミックな構図と、温もりを秘めた低音ボイスの支柱。深海の重力を思わせる重厚感でグループの輪郭を際立たせる。",
+        quote: "「揺らぐことのない海底の巌、重厚な守護者。」"
+      }
+    ];
+
+    let currentMemberIdx = 0;
+
+    // Render 7-Member Lookbook Gallery
+    function renderGallery() {
+      const container = document.getElementById('members-grid-box');
+      container.innerHTML = '';
+
+      membersData.forEach((m, idx) => {
+        const item = document.createElement('div');
+        const isActive = idx === currentMemberIdx;
+
+        item.className = 'cursor-pointer group transition-all';
+        item.onclick = () => selectMember(idx);
+
+        item.innerHTML = `
+          <div class="aspect-[3/5] bg-gallery-white border ${isActive ? 'border-bordeaux-vivid ring-1 ring-bordeaux-vivid' : 'border-line-gray'} p-2.5 flex flex-col justify-between transition-all group-hover:border-ink-deep shadow-sm">
+            <div class="flex justify-between font-mono text-[9px] text-caption-gray">
+              <span class="font-bold text-ink-deep">${m.id}</span>
+              <span>${m.code}</span>
+            </div>
+
+            <div class="my-2 flex-1 relative overflow-hidden bg-warm-ivory flex items-center justify-center">
+              <img 
+                src="${m.img}" 
+                alt="${m.name}" 
+                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+              />
+            </div>
+
+            <div class="hairline-t pt-1.5 text-center">
+              <span class="font-mincho text-[11px] font-bold text-ink-deep block">${m.kanji}</span>
+              <span class="font-display text-[9px] tracking-widest text-caption-gray uppercase block">${m.name}</span>
+            </div>
+          </div>
+        `;
+        container.appendChild(item);
+      });
+    }
+
+    function selectMember(idx) {
+      currentMemberIdx = idx;
+      renderGallery();
+
+      const m = membersData[idx];
+      document.getElementById('profile-index').innerText = `N° ${m.id}`;
+      document.getElementById('profile-kanji').innerText = m.kanji;
+      document.getElementById('profile-role').innerText = m.role;
+      document.getElementById('profile-name').innerText = m.name;
+      document.getElementById('profile-sub').innerText = m.sub;
+      document.getElementById('profile-desc').innerText = m.desc;
+      document.getElementById('profile-quote').innerText = m.quote;
+
+      const pImg = document.getElementById('profile-portrait');
+      pImg.src = m.img;
+      pImg.alt = m.name;
+    }
+
+    // Flip 3D Fanclub Card
+    function flipCard() {
+      document.getElementById('pass-card').classList.toggle('is-flipped');
+    }
+
+    function generatePassSerial() {
+      const num = Math.floor(1000 + Math.random() * 9000);
+      document.getElementById('pass-serial').innerText = `RGJ-2026-${num}`;
+    }
+
+    // Tour Reckoning Countdown Timer
+    function startCountdown() {
+      const target = new Date("2026-11-14T18:00:00+09:00").getTime();
+
+      function update() {
+        const now = new Date().getTime();
+        const diff = target - now;
+
+        if (diff <= 0) {
+          document.getElementById('ticker-days').innerText = "00";
+          document.getElementById('ticker-hours').innerText = "00";
+          document.getElementById('ticker-mins').innerText = "00";
+          document.getElementById('ticker-secs').innerText = "00";
+          return;
+        }
+
+        const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+        document.getElementById('ticker-days').innerText = String(d).padStart(2, '0');
+        document.getElementById('ticker-hours').innerText = String(h).padStart(2, '0');
+        document.getElementById('ticker-mins').innerText = String(m).padStart(2, '0');
+        document.getElementById('ticker-secs').innerText = String(s).padStart(2, '0');
+      }
+
+      update();
+      setInterval(update, 1000);
+    }
+
+    // Web Audio Synthesizer (Resonance)
+    let audioCtx = null;
+    let activeOsc = null;
+
+    function playTrackSimulation(name, frequency) {
+      const bar = document.getElementById('audio-status');
+      const label = document.getElementById('playing-track-name');
+      bar.classList.remove('hidden');
+      label.innerText = name;
+
+      try {
+        if (!audioCtx) {
+          audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+        if (activeOsc) {
+          try { activeOsc.stop(); } catch(e){}
+        }
+
+        activeOsc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+
+        activeOsc.type = 'triangle';
+        activeOsc.frequency.setValueAtTime(frequency, audioCtx.currentTime);
+        activeOsc.frequency.exponentialRampToValueAtTime(frequency * 1.35, audioCtx.currentTime + 1.2);
+
+        gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 2.0);
+
+        activeOsc.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        activeOsc.start();
+        activeOsc.stop(audioCtx.currentTime + 2.2);
+      } catch (e) {
+        console.log("Resonance output:", name);
+      }
+    }
+
+    function stopAudio() {
+      if (activeOsc) {
+        try { activeOsc.stop(); } catch(e){}
+      }
+      document.getElementById('audio-status').classList.add('hidden');
+    }
+
+    function playEditorialChant() {
+      playTrackSimulation("AVU-CHAN CHANT RESONANCE", 277.18);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderGallery();
+      selectMember(0);
+      startCountdown();
+    });
+  </script>
+
+</body>
+</html>
